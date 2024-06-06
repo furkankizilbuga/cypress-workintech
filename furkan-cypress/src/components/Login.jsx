@@ -110,7 +110,7 @@ export default function Login() {
           value={form.email}
           invalid={errors.email}
         />
-        {errors.email && <FormFeedback>{errorMessages.email}</FormFeedback>}
+        {errors.email && <FormFeedback data-cy="email">{errorMessages.email}</FormFeedback>}
       </FormGroup>
       <FormGroup>
         <Label for="examplePassword">Password</Label>
@@ -124,7 +124,7 @@ export default function Login() {
           invalid={errors.password}
         />
         {errors.password && (
-          <FormFeedback>{errorMessages.password}</FormFeedback>
+          <FormFeedback data-cy="password">{errorMessages.password}</FormFeedback>
         )}
       </FormGroup>
       <FormGroup check>
@@ -135,13 +135,14 @@ export default function Login() {
           type="checkbox"
           onChange={checkBoxListener}
           invalid={errors.terms}
+          data-cy="terms"
         />{' '}
         <Label htmlFor="terms" check>
           I agree to terms of service and privacy policy
         </Label>
       </FormGroup>
       <FormGroup className="text-center p-4">
-        <Button color="primary" disabled={!isValid}>
+        <Button data-cy="button" color="primary" disabled={!isValid}>
           Sign In
         </Button>
       </FormGroup>
